@@ -55,3 +55,28 @@ city.addEventListener("submit", showCity);
 
 searchCity("Lisbon"); //when i do this i want to see the weather in Lisbon as default everytime i refresh the page
 
+function displayForecast() {
+    let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+    let forecastHtml = "";
+  
+    days.forEach(function (day) {
+      forecastHtml =
+        forecastHtml +
+        `
+        <div class="weather-forecast-day">
+          <div class="weather-forecast-date">${day}</div>
+          <div class="weather-forecast-icon">🌤️</div>
+          <div class="weather-forecast-temperatures">
+            <div class="weather-forecast-temperature">
+              <strong>15º</strong>
+            </div>
+            <div class="weather-forecast-temperature">9º</div>
+          </div>
+        </div>
+      `;
+    });
+  
+    let forecastElement = document.querySelector("#forecast");
+    forecastElement.innerHTML = forecastHtml;
+  }
+  displayForecast();
